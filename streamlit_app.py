@@ -1,7 +1,7 @@
 
 import os
 import uuid
-
+import logging
 import streamlit as st
 
 # Load cloud secrets before importing the chatbot graph.
@@ -91,6 +91,7 @@ if prompt:
                 )
 
             except Exception:
+                logging.exception("TechNova chatbot request failed")
                 st.error(
                     "Sorry, the chatbot encountered an error. "
                     "Please try again later."
